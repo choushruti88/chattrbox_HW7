@@ -3,6 +3,14 @@ module.exports = {
     "browser": true
   },
   "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
   "rules": {
     "indent": [
       "error",
