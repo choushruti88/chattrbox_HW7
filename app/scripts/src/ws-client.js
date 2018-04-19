@@ -2,19 +2,19 @@ let socket;
 
 function init(url) {
   socket = new WebSocket(url);
-  console.log('connecting...');
+  console.log("connecting...");
 }
 
 function registerOpenHandler(handlerFunction) {
   socket.onopen = () => {
-    console.log('open');
+    console.log("open");
     handlerFunction();
   };
 }
 
 function registerMessageHandler(handlerFunction) {
   socket.onmessage = (e) => {
-    console.log('message', e.data);
+    console.log("message", e.data);
     let data = JSON.parse(e.data);
     handlerFunction(data);
   };
@@ -29,4 +29,4 @@ export default {
   registerOpenHandler,
   registerMessageHandler,
   sendMessage
-}
+};
